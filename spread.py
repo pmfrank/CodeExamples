@@ -1,5 +1,10 @@
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
+from dotenv import load_dotenv
+import os
+
+# Get envrionment varibles from .env file
+load_dotenv()
 
 
 def data_found(worksheet, value):
@@ -26,7 +31,7 @@ scope = ['https://www.googleapis.com/auth/spreadsheets',
           'https://www.googleapis.com/auth/drive']
 
 # Configure the service account from the JSON provided by Google to use OAuth2
-credentials = ServiceAccountCredentials.from_json_keyfile_name('white-might-263604-29a993d392d1.json', scope)
+credentials = ServiceAccountCredentials.from_json_keyfile_name(os.getenv("SPREAD_ACCOUNT_KEY"), scope)
 
 # Authenticate to Google Sheets using the gspread module
 gc = gspread.authorize(credentials)
@@ -36,3 +41,5 @@ wks = gc.open('ReBorn').sheet1
 
 # Send the worksheet to the data_found function to return true or false
 print(data_found(wks,'Tokugawa Ieyasu'))
+
+ServiceAccountCredentials

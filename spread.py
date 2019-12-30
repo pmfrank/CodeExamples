@@ -31,7 +31,7 @@ scope = ['https://www.googleapis.com/auth/spreadsheets',
           'https://www.googleapis.com/auth/drive']
 
 # Configure the service account from the JSON provided by Google to use OAuth2
-credentials = ServiceAccountCredentials.from_json_keyfile_name(os.getenv("SPREAD_ACCOUNT_KEY"), scope)
+credentials = ServiceAccountCredentials.from_json_keyfile_name(os.getenv("SERVICE_ACCOUNT_KEY"), scope)
 
 # Authenticate to Google Sheets using the gspread module
 gc = gspread.authorize(credentials)

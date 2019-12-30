@@ -41,5 +41,3 @@ wks = gc.open('ReBorn').sheet1
 
 # Send the worksheet to the data_found function to return true or false
 print(data_found(wks,'Tokugawa Ieyasu'))
-
-ServiceAccountCredentials

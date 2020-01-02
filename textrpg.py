@@ -44,6 +44,7 @@ if answer.lower().strip() == 'yes':
         Your maximum hp: {max_hp}
         """)
     elif answer == 'inventory':
+        print(f'You have {gp} gold coins.')
         print('You are carrying:')
         for item in inventory:
             print(item)

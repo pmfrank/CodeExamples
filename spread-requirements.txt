@@ -17,4 +17,4 @@ requests==2.22.0
 rsa==4.0
 six==1.13.0
 untokenize==0.1.1
-urllib3==1.25.7
+urllib3==1.26.5
